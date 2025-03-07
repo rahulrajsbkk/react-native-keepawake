@@ -1,11 +1,11 @@
-# react-native-keepawake
+# @rahulrajsbkk/react-native-keepawake
 
 A React Native package that prevents the screen from going to sleep while your app is active. Works for both iOS and Android.
 
 ## Installation
 
 ```sh
-npm install react-native-keepawake
+npm install @rahulrajsbkk/react-native-keepawake
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ Add the following permission to your AndroidManifest.xml:
 ## Usage
 
 ```javascript
-import { activate, deactivate } from 'react-native-keepawake';
+import { activate, deactivate } from '@rahulrajsbkk/react-native-keepawake';
 
 // Keep the screen awake
 activate();
@@ -35,7 +35,7 @@ deactivate();
 ```javascript
 import React, { useEffect } from 'react';
 import { View, Button } from 'react-native';
-import { activate, deactivate } from 'react-native-keepawake';
+import { activate, deactivate } from '@rahulrajsbkk/react-native-keepawake';
 
 function VideoPlayer() {
   useEffect(() => {

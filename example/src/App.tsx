@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
-import { activate, deactivate } from 'react-native-keepawake';
+import { activate, deactivate } from '@rahulrajsbkk/react-native-keepawake';
 
 export default function App() {
   const keepScreenAwake = () => {

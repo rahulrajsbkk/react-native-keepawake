@@ -1,5 +1,5 @@
 {
-  "name": "react-native-keepawake",
+  "name": "@rahulrajsbkk/react-native-keepawake",
   "version": "0.1.0",
   "description": "A React Native package that prevents the screen from going to sleep while your app is active. Works for both iOS and Android.",
   "source": "./src/index.tsx",
