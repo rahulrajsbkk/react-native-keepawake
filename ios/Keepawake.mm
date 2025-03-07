@@ -1,12 +1,19 @@
 #import "Keepawake.h"
+#import <UIKit/UIKit.h>
 
 @implementation Keepawake
 RCT_EXPORT_MODULE()
 
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
+- (void)activate {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIApplication sharedApplication].idleTimerDisabled = YES;
+    });
+}
 
-    return result;
+- (void)deactivate {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIApplication sharedApplication].idleTimerDisabled = NO;
+    });
 }
 
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

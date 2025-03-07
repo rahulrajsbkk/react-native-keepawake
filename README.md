@@ -10,15 +10,65 @@ npm install react-native-keepawake
 
 ## Usage
 
+### Android Setup
 
-```js
-import { multiply } from 'react-native-keepawake';
+Add the following permission to your AndroidManifest.xml:
 
-// ...
-
-const result = multiply(3, 7);
+```xml
+<uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
+## Usage
+
+```javascript
+import { activate, deactivate } from 'react-native-keepawake';
+
+// Keep the screen awake
+activate();
+
+// Allow the screen to sleep
+deactivate();
+```
+
+### Example
+
+```javascript
+import React, { useEffect } from 'react';
+import { View, Button } from 'react-native';
+import { activate, deactivate } from 'react-native-keepawake';
+
+function VideoPlayer() {
+  useEffect(() => {
+    // Activate keep awake when component mounts
+    activate();
+
+    // Deactivate when component unmounts
+    return () => {
+      deactivate();
+    };
+  }, []);
+
+  return <View>{/* Your video player component */}</View>;
+}
+```
+
+## API Reference
+
+### `activate()`
+
+Prevents the screen from going to sleep. The screen will remain on until `deactivate()` is called.
+
+### `deactivate()`
+
+Allows the screen to go to sleep following the device's normal behavior.
+
+## Common Use Cases
+
+- Video players
+- Navigation apps
+- Reading apps
+- Games
+- Presentation apps
 
 ## Contributing
 

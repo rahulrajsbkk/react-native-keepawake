@@ -1,5 +1,9 @@
 import Keepawake from './NativeKeepawake';
 
-export function multiply(a: number, b: number): number {
-  return Keepawake.multiply(a, b);
+export function activate(): void {
+  Keepawake.activate();
+}
+
+export function deactivate(): void {
+  Keepawake.deactivate();
 }
