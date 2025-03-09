@@ -1,6 +1,6 @@
 {
   "name": "react-native-wakelock-keepawake",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A React Native package that prevents the screen from going to sleep while your app is active. Works for both iOS and Android.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
