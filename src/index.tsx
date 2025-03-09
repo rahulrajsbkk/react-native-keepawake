@@ -1,9 +1,9 @@
-import Keepawake from './NativeKeepawake';
+import KeepawakeModule from './NativeKeepawake';
 
 export function activate(): void {
-  Keepawake.activate();
+  KeepawakeModule.activate();
 }
 
 export function deactivate(): void {
-  Keepawake.deactivate();
+  KeepawakeModule.deactivate();
 }
