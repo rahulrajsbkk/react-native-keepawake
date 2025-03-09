@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@rahulrajsbkk/react-native-keepawake": ["./src/index"]
+      "@rahulrajsb/react-native-keepawake": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
