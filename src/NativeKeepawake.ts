@@ -10,12 +10,15 @@ export interface Spec extends TurboModule {
   deactivate(): void;
 }
 
-const isNewArchitecture = () => {
-  return global.nativeCallSyncHook != null;
-};
+// More reliable way to check for new architecture
+const isTurboModuleEnabled = global.nativeCallSyncHook != null;
 
-const KeepawakeModule = isNewArchitecture()
-  ? TurboModuleRegistry.getEnforcing<Spec>('Keepawake')
+const KeepawakeModule = isTurboModuleEnabled
+  ? TurboModuleRegistry.get<Spec>('Keepawake')
   : NativeModules.Keepawake;
+
+if (!KeepawakeModule) {
+  throw new Error('Keepawake native module is not available');
+}
 
 export default KeepawakeModule;

@@ -1,17 +1,17 @@
-# @rahulrajsb/react-native-keepawake
+# react-native-wakelock-keepawake
 
 A React Native package that prevents the screen from going to sleep while your app is active. Works for both iOS and Android.
 
 ## Installation
 
 ```sh
-yarn add @rahulrajsb/react-native-keepawake
+yarn add react-native-wakelock-keepawake
 ```
 
 OR
 
 ```sh
-npm install @rahulrajsb/react-native-keepawake
+npm install react-native-wakelock-keepawake
 ```
 
 ## Usage
@@ -27,13 +27,16 @@ Add the following permission to your AndroidManifest.xml:
 ## Usage
 
 ```javascript
-import { activate, deactivate } from '@rahulrajsb/react-native-keepawake';
+import {
+  activateWakelock,
+  deactivateWakelock,
+} from 'react-native-wakelock-keepawake';
 
 // Keep the screen awake
-activate();
+activateWakelock();
 
 // Allow the screen to sleep
-deactivate();
+deactivateWakelock();
 ```
 
 ### Example
@@ -41,16 +44,19 @@ deactivate();
 ```javascript
 import React, { useEffect } from 'react';
 import { View, Button } from 'react-native';
-import { activate, deactivate } from '@rahulrajsb/react-native-keepawake';
+import {
+  activateWakelock,
+  deactivateWakelock,
+} from 'react-native-wakelock-keepawake';
 
 function VideoPlayer() {
   useEffect(() => {
     // Activate keep awake when component mounts
-    activate();
+    activateWakelock();
 
     // Deactivate when component unmounts
     return () => {
-      deactivate();
+      deactivateWakelock();
     };
   }, []);
 
@@ -60,11 +66,11 @@ function VideoPlayer() {
 
 ## API Reference
 
-### `activate()`
+### `activateWakelock()`
 
-Prevents the screen from going to sleep. The screen will remain on until `deactivate()` is called.
+Prevents the screen from going to sleep. The screen will remain on until `deactivateWakelock()` is called.
 
-### `deactivate()`
+### `deactivateWakelock()`
 
 Allows the screen to go to sleep following the device's normal behavior.
 

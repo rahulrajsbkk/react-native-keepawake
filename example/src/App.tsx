@@ -5,15 +5,18 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
-import { activate, deactivate } from '@rahulrajsb/react-native-keepawake';
+import {
+  activateWakelock,
+  deactivateWakelock,
+} from 'react-native-wakelock-keepawake';
 
 export default function App() {
   const keepScreenAwake = () => {
-    activate();
+    activateWakelock();
   };
 
   const allowScreenSleep = () => {
-    deactivate();
+    deactivateWakelock();
   };
 
   return (

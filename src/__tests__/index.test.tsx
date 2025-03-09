@@ -1,4 +1,4 @@
-import { activate, deactivate } from '../index';
+import { activateWakelock, deactivateWakelock } from '../index';
 import { NativeModules } from 'react-native';
 
 describe('Keepawake', () => {
@@ -14,12 +14,12 @@ describe('Keepawake', () => {
   });
 
   it('should call native activate method', () => {
-    activate();
+    activateWakelock();
     expect(NativeModules.Keepawake.activate).toHaveBeenCalled();
   });
 
   it('should call native deactivate method', () => {
-    deactivate();
+    deactivateWakelock();
     expect(NativeModules.Keepawake.deactivate).toHaveBeenCalled();
   });
 });

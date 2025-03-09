@@ -1,5 +1,5 @@
 {
-  "name": "@rahulrajsb/react-native-keepawake-example",
+  "name": "react-native-wakelock-keepawake-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
